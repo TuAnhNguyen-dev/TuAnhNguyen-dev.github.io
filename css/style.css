@@ -1,0 +1,80 @@
+/* --- CẤU HÌNH MÀU SẮC --- */
+:root {
+    --bg-color: #121212;      /* Màu nền tối giống IDE */
+    --surface-color: #1e1e1e; /* Màu nền cho thanh điều hướng/khối thông tin */
+    --text-primary: #e0e0e0;  /* Màu chữ chính (trắng xám cho đỡ mỏi mắt) */
+    --text-secondary: #a0a0a0;/* Màu chữ phụ */
+    --accent-color: #61afef;  /* Màu nhấn xanh dương (chuẩn style code) */
+}
+
+/* --- THIẾT LẬP CHUNG --- */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font gọn gàng */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* --- THANH ĐIỀU HƯỚNG (NAVBAR) --- */
+.navbar {
+    background-color: var(--surface-color);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #333;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace; /* Font gõ phím */
+    color: var(--accent-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--accent-color);
+}
+
+/* --- NỘI DUNG CHÍNH --- */
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: var(--text-primary);
+}
+
+/* --- KHỐI BÀI TẬP (PROJECT ITEM) --- */
+.project-item {
+    background-color: var(--surface-color); /* Nền xám sáng hơn nền đen của trang web */
+    padding: 40px 50px; /* BÍ QUYẾT LÀ ĐÂY: Thụt trên/dưới 40px, thụt TRÁI/PHẢI 50px */
+    border-radius: 12px; /* Bo góc mềm mại */
+    margin-bottom: 50px; /* Cách xa bài tập bên dưới 50px */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Đổ bóng 3D nổi khối */
+}
+
+/* Đảm bảo ảnh bên trong không bao giờ bị tràn ra ngoài lề */
+.project-item img {
+    max-width: 100%;
+    height: auto;
+}
