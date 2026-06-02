@@ -49,6 +49,7 @@ body {
     color: var(--text-primary);
     text-decoration: none;
     font-weight: 500;
+    position: relative; /* Đặt làm mốc để đường gạch chân neo vào */
     transition: color 0.3s ease;
 }
 
@@ -56,11 +57,28 @@ body {
     color: var(--accent-color);
 }
 
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;           /* Ban đầu đường kẻ dài 0px (bị giấu đi) */
+    height: 2px;        /* Độ dày của đường kẻ */
+    bottom: -6px;       /* Cách chân chữ 6px cho thoáng */
+    left: 0;            /* Bắt đầu trượt từ mép trái */
+    background-color: var(--accent-color);
+    transition: width 0.3s ease; /* Tốc độ trượt mượt mà 0.3 giây */
+}
+
+/* Khi di chuột vào HOẶC khi đang ở đúng trang đó (class active) */
+.nav-links a:hover::after, .nav-links a.active::after {
+    width: 100%;        /* Đường kẻ trượt dài ra bằng đúng 100% chữ */
+}
+
 /* --- NỘI DUNG CHÍNH --- */
 .container {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 20px;
+    width: 90%;          /* Thêm tỷ lệ % để khung tự động bóp mềm mại trên các màn hình nhỏ */
+    max-width: 1000px;   /* Giữ nguyên giới hạn 1000px để giao diện PC không bị biến dạng */
+    margin: 40px auto;   /* Giữ nguyên căn giữa */
+    padding: 20px;       /* Giữ nguyên khoảng đệm */
 }
 
 h1, h2 {
@@ -183,4 +201,54 @@ html {
     .tags-sidebar {
         display: none;
     }
+}
+
+/* --- HIỆU ỨNG TƯƠNG TÁC CHO LOGO --- */
+.logo a {
+    display: inline-block; /* Bắt buộc phải có dòng này thì hiệu ứng to/nhỏ mới hoạt động */
+    transition: all 0.3s ease; /* Tạo độ mượt khi chuyển đổi trạng thái */
+}
+
+.logo a:hover {
+    color: #ffffff !important; /* Chữ lóe sáng thành màu trắng tinh */
+    text-shadow: 0 0 15px var(--accent-color), 0 0 30px var(--accent-color); /* Đổ bóng phát sáng tỏa ra xung quanh */
+    transform: scale(1.08) rotate(-2deg); /* Phóng to nhẹ lên 8% và nghiêng trái 2 độ tạo cảm giác phá cách */
+}
+
+/* --- NÚT BẤM (BUTTONS) TRANG CHỦ --- */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: all 0.3s ease; /* Chuyển động mượt mà */
+}
+
+/* Nút chính (Xem Dự Án) */
+.btn-primary {
+    background-color: var(--accent-color);
+    color: #121212; 
+    margin-right: 15px;
+    box-shadow: 0 4px 10px rgba(97, 175, 239, 0.2); /* Đổ bóng xanh nhạt */
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px); /* Nhấc nhẹ nút lên */
+    box-shadow: 0 8px 20px rgba(97, 175, 239, 0.5); /* Sáng rực lên */
+    background-color: #7bc0ff; /* Đổi màu xanh sáng hơn một chút */
+}
+
+/* Nút phụ (GitHub) */
+.btn-outline {
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    background-color: transparent;
+}
+
+.btn-outline:hover {
+    transform: translateY(-3px); /* Nhấc nhẹ nút lên */
+    background-color: var(--accent-color); /* Nền đặc lại thành màu xanh */
+    color: #121212; /* Chữ chuyển thành màu đen */
+    box-shadow: 0 8px 20px rgba(97, 175, 239, 0.4); /* Phát sáng */
 }
