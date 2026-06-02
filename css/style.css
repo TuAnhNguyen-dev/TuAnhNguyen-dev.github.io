@@ -17,7 +17,6 @@ body {
     line-height: 1.6;
 }
 
-/* --- THANH ĐIỀU HƯỚNG (NAVBAR) --- */
 .navbar {
     background-color: var(--surface-color);
     padding: 15px 40px;
@@ -25,6 +24,10 @@ body {
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid #333;
+    
+    position: sticky; 
+    top: 0;           /* Ghim sát vào mép trên cùng của trình duyệt */
+    z-index: 1000;    /* Đảm bảo thanh menu luôn nổi lên trên cùng, không bị ảnh hay chữ đè lên khi cuộn */
 }
 
 .logo {
@@ -64,17 +67,120 @@ h1, h2 {
     color: var(--text-primary);
 }
 
-/* --- KHỐI BÀI TẬP (PROJECT ITEM) --- */
 .project-item {
-    background-color: var(--surface-color); /* Nền xám sáng hơn nền đen của trang web */
-    padding: 40px 50px; /* BÍ QUYẾT LÀ ĐÂY: Thụt trên/dưới 40px, thụt TRÁI/PHẢI 50px */
-    border-radius: 12px; /* Bo góc mềm mại */
-    margin-bottom: 50px; /* Cách xa bài tập bên dưới 50px */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Đổ bóng 3D nổi khối */
+    background-color: var(--surface-color);
+    padding: 40px 50px;
+    border-radius: 12px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
 /* Đảm bảo ảnh bên trong không bao giờ bị tràn ra ngoài lề */
 .project-item img {
     max-width: 100%;
     height: auto;
+}
+
+/* Hiệu ứng nhấc bổng khi hover */
+.project-item:hover {
+    transform: translateY(-8px); /* Nhấc nhẹ khối lên trên 8px dọc theo trục Y */
+    box-shadow: 0 12px 30px rgba(97, 175, 239, 0.15); /* Đổ bóng rộng hơn, pha nhẹ ánh sáng xanh */
+}
+
+/* --- KHU VỰC HERO (GIỚI THIỆU CHÍNH) --- */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1; /* Cho phần chữ chiếm không gian linh hoạt */
+}
+
+.hero-image {
+    flex-basis: 280px; /* Kích thước cố định cho khu vực ảnh */
+    text-align: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 250px;
+    aspect-ratio: 1 / 1; /* Ép ảnh thành hình vuông chuẩn */
+    object-fit: cover; /* Cắt ảnh không bị méo */
+    border-radius: 50%; /* Bo tròn hoàn toàn */
+    border: 4px solid var(--accent-color); /* Viền màu xanh nhấn */
+    box-shadow: 0 0 25px rgba(97, 175, 239, 0.3); /* Hiệu ứng phát sáng công nghệ */
+    transition: transform 0.3s ease; /* Hiệu ứng chuyển động mượt */
+}
+
+/* Tương tác khi di chuột vào ảnh */
+.hero-image img:hover {
+    transform: scale(1.05); /* Phóng to nhẹ lên 5% */
+}
+
+/* Responsive: Đẩy ảnh lên trên chữ khi xem trên điện thoại */
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+}
+
+/* --- HIỆU ỨNG TRƯỢT MƯỢT --- */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Bù trừ khoảng không để Navbar không đè lên tiêu đề bài tập khi bấm Tag */
+.project-item {
+    scroll-margin-top: 90px; 
+}
+
+/* --- THANH TAG ĐIỀU HƯỚNG GÓC TRÁI --- */
+.tags-sidebar {
+    position: fixed;
+    top: 150px;          
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 100;
+    
+    /* ĐOẠN CODE TOÁN HỌC THẦN THÁNH Ở ĐÂY */
+    /* 1. Mốc là giữa màn hình (50%) */
+    /* 2. Lùi lại 450px (một nửa chiều rộng container) để ra mép trái container */
+    /* 3. Lùi thêm 30px nữa để tạo khoảng cách thở (gap) */
+    left: calc(50% - 480px);
+    
+    /* Kéo giật thanh Tag sang trái bằng đúng 100% chiều rộng của nó, 
+       đảm bảo mép phải của nó vừa chạm mốc bên trên */
+    transform: translateX(-100%);
+}
+.tag-btn {
+    background-color: var(--surface-color);
+    color: var(--text-secondary);
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: bold;
+    border-left: 4px solid transparent;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.tag-btn:hover {
+    color: var(--accent-color);
+    border-left-color: var(--accent-color); /* Hiện vạch xanh bên trái khi chỉ chuột */
+    transform: translateX(8px); /* Thụt nhẹ sang phải tạo cảm giác bấm */
+}
+
+/* Ẩn thanh Tag trên màn hình nhỏ (điện thoại/tablet) để tránh đè vào nội dung chữ */
+@media (max-width: 1300px) {
+    .tags-sidebar {
+        display: none;
+    }
 }

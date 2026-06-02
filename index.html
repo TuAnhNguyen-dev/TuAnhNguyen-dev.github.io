@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Tu Anh Nguyen</title>
-    <!-- Nhúng file CSS vào đây -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -19,35 +18,44 @@
         </ul>
     </nav>
 
-    <!-- Phần nội dung chính -->
+<!-- Phần nội dung chính -->
     <main class="container">
-        <h1>Xin chào, tôi là Nguyễn Duy Tú Anh! 👋</h1>
         
-        <section style="margin-bottom: 30px;">
-            <h2 style="color: var(--accent-color);">👨‍💻 Về bản thân</h2>
-            <p>
-                Tôi hiện đang là sinh viên chuyên ngành Công nghệ Thông tin tại trường Đại học Công nghệ (UET) – Đại học Quốc gia Hà Nội (VNU). Ngoài những giờ học tập và làm việc, tôi thường dành thời gian giải trí với các tựa game giải đố và phiêu lưu.
-            </p>
-            <p>
-                Tôi có niềm đam mê lớn với thuật toán, đặc biệt là lập trình thi đấu và quy hoạch động. Tôi luôn thích thú với việc tìm tòi cách tối ưu hóa mã nguồn để nâng cao hiệu suất và tiết kiệm bộ nhớ.
-            </p>
+        <!-- Khu vực Hero (Chia 2 cột) -->
+        <section class="project-item hero-section">
+            <!-- Cột trái: Chữ -->
+            <div class="hero-text">
+                <h1 style="font-size: 2.8em; margin-top: 0; line-height: 1.2;">
+                    Xin chào, tôi là <br>
+                    <span style="color: var(--accent-color);">Nguyễn Duy Tú Anh</span> 👋
+                </h1>
+                <p style="color: var(--text-secondary); font-size: 1.1em; line-height: 1.8;">
+                    Sinh viên chuyên ngành Công nghệ Thông tin tại Đại học Công nghệ (UET) – ĐHQGHN. Tôi có niềm đam mê đặc biệt với lập trình thi đấu, tối ưu hóa thuật toán và luôn hướng tới mục tiêu trở thành một Kỹ sư Backend vững vàng.
+                </p>
+                
+                <!-- Nút bấm điều hướng -->
+                <div style="margin-top: 30px;">
+                    <a href="projects.html" style="display: inline-block; background-color: var(--accent-color); color: #000; padding: 12px 28px; text-decoration: none; border-radius: 6px; font-weight: bold; margin-right: 15px; transition: opacity 0.2s;">Xem Dự Án</a>
+                    <a href="https://github.com/TuAnhNguyen-dev" target="_blank" style="display: inline-block; border: 2px solid var(--accent-color); color: var(--accent-color); padding: 10px 28px; text-decoration: none; border-radius: 6px; font-weight: bold; transition: background 0.2s;">GitHub</a>
+                </div>
+            </div>
+
+            <!-- Cột phải: Ảnh -->
+            <div class="hero-image">
+                <img src="images/profile.jfif" alt="Chân dung Tú Anh">
+            </div>
         </section>
 
-        <section style="margin-bottom: 30px;">
-            <h2 style="color: var(--accent-color);">🚀 Định hướng phát triển</h2>
-            <p>
-                Định hướng của tôi là trở thành một kỹ sư Backend chuyên nghiệp. Để hiện thực hóa điều này, tôi đang không ngừng trau dồi kiến thức về thuật toán, quản trị cơ sở dữ liệu cũng như các nền tảng công nghệ backend.
-            </p>
-        </section>
-
-        <section>
-            <h2 style="color: var(--accent-color);">🎯 Mục tiêu của Portfolio</h2>
+        <!-- Khu vực Mục tiêu (Nằm độc lập phía dưới) -->
+        <section class="project-item">
+            <h2 style="color: var(--accent-color); margin-top: 0;">🎯 Mục tiêu của Portfolio</h2>
             <p>Trang web này được xây dựng với hai mục đích chính:</p>
-            <ul style="color: var(--text-secondary); line-height: 1.8;">
+            <ul style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 0;">
                 <li>Lưu trữ và hệ thống hóa các sản phẩm cá nhân để dễ dàng truy cập, chia sẻ.</li>
-                <li>Thể hiện lại các kỹ năng số và năng lực công nghệ tôi đã tích lũy được qua quá trình học tập.</li>
+                <li>Thể hiện lại các kỹ năng số, năng lực công nghệ và tư duy giải quyết vấn đề đã tích lũy được qua quá trình học tập.</li>
             </ul>
         </section>
+
     </main>
 
 </body>

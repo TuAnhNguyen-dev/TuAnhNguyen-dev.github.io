@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Tu Anh Nguyen</title>
-    <!-- Nhúng file CSS vào đây -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -19,257 +18,269 @@
         </ul>
     </nav>
 
-    <section class="project-item">
-        <h2 style="color: var(--accent-color);">Bài 1: Các thao tác cơ bản với tệp và thư mục</h2>
-        
-        <div class="project-content">
-            <h3>1. Mục tiêu bài tập</h3>
-            <p>Thực hành và nắm vững các thao tác cơ bản với tệp và thư mục trên hệ điều hành. Việc thiết lập cấu trúc lưu trữ gọn gàng giúp tối ưu hóa không gian làm việc và quản lý dữ liệu hiệu quả.</p>
-            
-            <h3>2. Quá trình thực hiện</h3>
-            <p>Quá trình thực hành được triển khai theo các bước tuần tự:</p>
-            <ul style="color: var(--text-secondary); line-height: 1.8;">
-                <li><strong>Khởi tạo thư mục gốc:</strong> Mở File Explorer, truy cập vào ổ đĩa dữ liệu hoặc thư mục Documents. Tại đây, tạo thư mục mới với quy tắc đặt tên là ThucHanh_hotensinhvien. Cụ thể trong dự án này là ThucHanh_NguyenDuyTuAnh.</li>
-                <li><strong>Quản lý và tổ chức tệp:</strong> Tạo tệp tin văn bản GhiChu.txt và thực hiện thao tác đổi tên thành GhiChuQuanTrong.txt. Sau đó, tạo thêm một thư mục con tên là TaiLieu.</li>
-                <li><strong>Thao tác điều hướng dữ liệu:</strong> Thực hiện việc sao chép (Copy & Paste) tệp tin vào thư mục con. Đồng thời, tạo một tệp DiChuyen.txt để thực hành lệnh di chuyển tệp tin (Cut & Paste).</li>
-                <li><strong>Quản lý vòng đời dữ liệu:</strong> Xóa tệp tin (Delete) để đưa vào Thùng rác (Recycle Bin). Thực hành lệnh xóa vĩnh viễn (Shift + Delete) không qua Thùng rác và khôi phục (Restore) tệp đã xóa trở lại vị trí ban đầu.</li>
-            </ul>
+    <main class="container">
+        <!-- Thanh Tags nằm góc trái -->
+        <div class="tags-sidebar">
+            <a href="#bai1" class="tag-btn">Bài 1: Tệp & Thư mục</a>
+            <a href="#bai2" class="tag-btn">Bài 2: Khai thác Dữ liệu</a>
+            <a href="#bai3" class="tag-btn">Bài 3: Viết Prompt AI</a>
+            <a href="#bai4" class="tag-btn">Bài 4: Hợp tác Trực tuyến</a>
+            <a href="#bai5" class="tag-btn">Bài 5: AI Tạo sinh</a>
+            <a href="#bai6" class="tag-btn">Bài 6: Liêm chính AI</a>
+        </div>
 
-            <h3>3. Minh họa kết quả</h3>
-            <p>Dưới đây là các hình ảnh minh họa cho cấu trúc thư mục đã thiết lập:</p>
+        <section class="project-item" id="bai1">
+            <h2 style="color: var(--accent-color);">Bài 1: Các thao tác cơ bản với tệp và thư mục</h2>
             
-            <!-- Khối chứa hình ảnh -->
-            <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
-                <!-- Ảnh 1 -->
-                <figure style="margin: 0; flex: 1; min-width: 300px;">
-                    <img src="images/tao-thu-muc.png" alt="Cấu trúc thư mục gốc" style="width: 100%; border: 1px solid #444; border-radius: 5px;">
-                    <figcaption style="text-align: center; font-size: 0.9em; color: #888; margin-top: 8px;">Khởi tạo thư mục ThucHanh_NguyenDuyTuAnh</figcaption>
-                </figure>
+            <div class="project-content">
+                <h3>1. Mục tiêu bài tập</h3>
+                <p>Thực hành và nắm vững các thao tác cơ bản với tệp và thư mục trên hệ điều hành. Việc thiết lập cấu trúc lưu trữ gọn gàng giúp tối ưu hóa không gian làm việc và quản lý dữ liệu hiệu quả.</p>
                 
-                <!-- Ảnh 2 -->
-                <figure style="margin: 0; flex: 1; min-width: 300px;">
-                    <img src="images/thao-tac-file.png" alt="Thao tác với tệp" style="width: 100%; border: 1px solid #444; border-radius: 5px;">
-                    <figcaption style="text-align: center; font-size: 0.9em; color: #888; margin-top: 8px;">Tổ chức tệp tin bên trong thư mục con</figcaption>
-                </figure>
+                <h3>2. Quá trình thực hiện</h3>
+                <p>Quá trình thực hành được triển khai theo các bước tuần tự:</p>
+                <ul style="color: var(--text-secondary); line-height: 1.8;">
+                    <li><strong>Khởi tạo thư mục gốc:</strong> Mở File Explorer, truy cập vào ổ đĩa dữ liệu hoặc thư mục Documents. Tại đây, tạo thư mục mới với quy tắc đặt tên là ThucHanh_hotensinhvien. Cụ thể trong dự án này là ThucHanh_NguyenDuyTuAnh.</li>
+                    <li><strong>Quản lý và tổ chức tệp:</strong> Tạo tệp tin văn bản GhiChu.txt và thực hiện thao tác đổi tên thành GhiChuQuanTrong.txt. Sau đó, tạo thêm một thư mục con tên là TaiLieu.</li>
+                    <li><strong>Thao tác điều hướng dữ liệu:</strong> Thực hiện việc sao chép (Copy & Paste) tệp tin vào thư mục con. Đồng thời, tạo một tệp DiChuyen.txt để thực hành lệnh di chuyển tệp tin (Cut & Paste).</li>
+                    <li><strong>Quản lý vòng đời dữ liệu:</strong> Xóa tệp tin (Delete) để đưa vào Thùng rác (Recycle Bin). Thực hành lệnh xóa vĩnh viễn (Shift + Delete) không qua Thùng rác và khôi phục (Restore) tệp đã xóa trở lại vị trí ban đầu.</li>
+                </ul>
+
+                <h3>3. Minh họa kết quả</h3>
+                <p>Dưới đây là các hình ảnh minh họa cho cấu trúc thư mục đã thiết lập:</p>
+                
+                <!-- Khối chứa hình ảnh -->
+                <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
+                    <!-- Ảnh 1 -->
+                    <figure style="margin: 0; flex: 1; min-width: 300px;">
+                        <img src="images/tao-thu-muc.png" alt="Cấu trúc thư mục gốc" style="width: 100%; border: 1px solid #444; border-radius: 5px;">
+                        <figcaption style="text-align: center; font-size: 0.9em; color: #888; margin-top: 8px;">Khởi tạo thư mục ThucHanh_NguyenDuyTuAnh</figcaption>
+                    </figure>
+                    
+                    <!-- Ảnh 2 -->
+                    <figure style="margin: 0; flex: 1; min-width: 300px;">
+                        <img src="images/thao-tac-file.png" alt="Thao tác với tệp" style="width: 100%; border: 1px solid #444; border-radius: 5px;">
+                        <figcaption style="text-align: center; font-size: 0.9em; color: #888; margin-top: 8px;">Tổ chức tệp tin bên trong thư mục con</figcaption>
+                    </figure>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="project-item">
-        <h2 style="color: var(--accent-color);">Bài 2: Tìm kiếm và đánh giá thông tin học thuật</h2>
-        
-        <div class="project-content">
-            <h3>1. Mục tiêu bài tập</h3>
-            <p>Ứng dụng các toán tử tìm kiếm nâng cao để rà soát tài liệu chuyên ngành hiệu quả. Đồng thời, thực hành kỹ năng thẩm định độ tin cậy của các nguồn tài liệu học thuật trên Internet.</p>
+        <section class="project-item" id="bai2">
+            <h2 style="color: var(--accent-color);">Bài 2: Tìm kiếm và đánh giá thông tin học thuật</h2>
             
-            <h3>2. Quá trình thực hiện & Kết quả</h3>
-            
-            <h4>A. Ứng dụng toán tử tìm kiếm</h4>
-            <p>Thay vì tìm kiếm thông thường, tôi đã kết hợp các toán tử để thu hẹp phạm vi tìm kiếm các tài liệu liên quan đến tối ưu hóa mã nguồn và cấu trúc dữ liệu:</p>
-            
-            <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
-                <tr style="background-color: var(--surface-color); border-bottom: 2px solid var(--accent-color);">
-                    <th style="padding: 10px; text-align: left;">Toán tử</th>
-                    <th style="padding: 10px; text-align: left;">Cú pháp đã dùng</th>
-                    <th style="padding: 10px; text-align: left;">Mục đích / Tác dụng</th>
-                </tr>
-                <tr style="border-bottom: 1px solid #444;">
-                    <td style="padding: 10px;"><code>" "</code> (Chính xác)</td>
-                    <td style="padding: 10px;"><code>"1D DP array" space optimization</code></td>
-                    <td style="padding: 10px;">Bắt buộc kết quả phải chứa cụm từ chính xác về mảng quy hoạch động 1 chiều.</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #444;">
-                    <td style="padding: 10px;"><code>site:</code></td>
-                    <td style="padding: 10px;"><code>site:github.com CI/CD workflow</code></td>
-                    <td style="padding: 10px;">Chỉ giới hạn kết quả tìm kiếm các luồng CI/CD nằm trên nền tảng GitHub.</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #444;">
-                    <td style="padding: 10px;"><code>filetype:</code></td>
-                    <td style="padding: 10px;"><code>filetype:pdf Java backend architecture</code></td>
-                    <td style="padding: 10px;">Chỉ tìm và tải các tài liệu nghiên cứu, sách dưới định dạng PDF.</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #444;">
-                    <td style="padding: 10px;"><code>-</code> (Loại trừ)</td>
-                    <td style="padding: 10px;"><code>MySQL indexing -tutorial -video</code></td>
-                    <td style="padding: 10px;">Loại bỏ các bài hướng dẫn cơ bản hoặc video, chỉ giữ lại tài liệu chuyên sâu.</td>
-                </tr>
-            </table>
+            <div class="project-content">
+                <h3>1. Mục tiêu bài tập</h3>
+                <p>Ứng dụng các toán tử tìm kiếm nâng cao để rà soát tài liệu chuyên ngành hiệu quả. Đồng thời, thực hành kỹ năng thẩm định độ tin cậy của các nguồn tài liệu học thuật trên Internet.</p>
+                
+                <h3>2. Quá trình thực hiện & Kết quả</h3>
+                
+                <h4>A. Ứng dụng toán tử tìm kiếm</h4>
+                <p>Thay vì tìm kiếm thông thường, tôi đã kết hợp các toán tử để thu hẹp phạm vi tìm kiếm các tài liệu liên quan đến tối ưu hóa mã nguồn và cấu trúc dữ liệu:</p>
+                
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                    <tr style="background-color: var(--surface-color); border-bottom: 2px solid var(--accent-color);">
+                        <th style="padding: 10px; text-align: left;">Toán tử</th>
+                        <th style="padding: 10px; text-align: left;">Cú pháp đã dùng</th>
+                        <th style="padding: 10px; text-align: left;">Mục đích / Tác dụng</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #444;">
+                        <td style="padding: 10px;"><code>" "</code> (Chính xác)</td>
+                        <td style="padding: 10px;"><code>"1D DP array" space optimization</code></td>
+                        <td style="padding: 10px;">Bắt buộc kết quả phải chứa cụm từ chính xác về mảng quy hoạch động 1 chiều.</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #444;">
+                        <td style="padding: 10px;"><code>site:</code></td>
+                        <td style="padding: 10px;"><code>site:github.com CI/CD workflow</code></td>
+                        <td style="padding: 10px;">Chỉ giới hạn kết quả tìm kiếm các luồng CI/CD nằm trên nền tảng GitHub.</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #444;">
+                        <td style="padding: 10px;"><code>filetype:</code></td>
+                        <td style="padding: 10px;"><code>filetype:pdf Java backend architecture</code></td>
+                        <td style="padding: 10px;">Chỉ tìm và tải các tài liệu nghiên cứu, sách dưới định dạng PDF.</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #444;">
+                        <td style="padding: 10px;"><code>-</code> (Loại trừ)</td>
+                        <td style="padding: 10px;"><code>MySQL indexing -tutorial -video</code></td>
+                        <td style="padding: 10px;">Loại bỏ các bài hướng dẫn cơ bản hoặc video, chỉ giữ lại tài liệu chuyên sâu.</td>
+                    </tr>
+                </table>
 
-            <h4>B. Bảng đánh giá nguồn tin học thuật</h4>
-            <p>Để đảm bảo tính liêm chính học thuật, các tài liệu thu thập được đánh giá dựa trên tiêu chí CRAAP (Currency, Relevance, Authority, Accuracy, Purpose):</p>
-            
-            <table style="width: 100%; border-collapse: collapse;">
-                <tr style="background-color: var(--surface-color); border-bottom: 2px solid var(--accent-color);">
-                    <th style="padding: 10px; text-align: left;">Tiêu chí đánh giá</th>
-                    <th style="padding: 10px; text-align: left;">Cách thực hiện thực tế</th>
-                </tr>
-                <tr style="border-bottom: 1px solid #444;">
-                    <td style="padding: 10px;"><strong>Nguồn gốc & Tác giả</strong> (Authority)</td>
-                    <td style="padding: 10px;">Ưu tiên các bài báo từ IEEE, Springer, hoặc tài liệu chính thức từ các trường Đại học có đuôi <code>.edu</code>, <code>.gov</code>.</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #444;">
-                    <td style="padding: 10px;"><strong>Tính cập nhật</strong> (Currency)</td>
-                    <td style="padding: 10px;">Sử dụng công cụ "Any time" trên Google Scholar để chỉ lấy tài liệu xuất bản trong vòng 3-5 năm trở lại đây.</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #444;">
-                    <td style="padding: 10px;"><strong>Tính khách quan</strong> (Purpose)</td>
-                    <td style="padding: 10px;">Kiểm tra xem tài liệu có bị chi phối bởi mục đích thương mại (quảng cáo sản phẩm) hay không.</td>
-                </tr>
-            </table>
-            
-            <h3 style="margin-top: 20px;">3. Minh họa kết quả</h3>
-            <p>Ví dụ minh họa khi sử dụng tổ hợp toán tử tìm kiếm nâng cao:</p>
-            <div style="margin-top: 20px; text-align: center;">
-                <img src="images/search-demo.png" alt="Minh họa tìm kiếm" style="max-width: 80%; border: 1px solid #444; border-radius: 5px;">
+                <h4>B. Bảng đánh giá nguồn tin học thuật</h4>
+                <p>Để đảm bảo tính liêm chính học thuật, các tài liệu thu thập được đánh giá dựa trên tiêu chí CRAAP (Currency, Relevance, Authority, Accuracy, Purpose):</p>
+                
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr style="background-color: var(--surface-color); border-bottom: 2px solid var(--accent-color);">
+                        <th style="padding: 10px; text-align: left;">Tiêu chí đánh giá</th>
+                        <th style="padding: 10px; text-align: left;">Cách thực hiện thực tế</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #444;">
+                        <td style="padding: 10px;"><strong>Nguồn gốc & Tác giả</strong> (Authority)</td>
+                        <td style="padding: 10px;">Ưu tiên các bài báo từ IEEE, Springer, hoặc tài liệu chính thức từ các trường Đại học có đuôi <code>.edu</code>, <code>.gov</code>.</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #444;">
+                        <td style="padding: 10px;"><strong>Tính cập nhật</strong> (Currency)</td>
+                        <td style="padding: 10px;">Sử dụng công cụ "Any time" trên Google Scholar để chỉ lấy tài liệu xuất bản trong vòng 3-5 năm trở lại đây.</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #444;">
+                        <td style="padding: 10px;"><strong>Tính khách quan</strong> (Purpose)</td>
+                        <td style="padding: 10px;">Kiểm tra xem tài liệu có bị chi phối bởi mục đích thương mại (quảng cáo sản phẩm) hay không.</td>
+                    </tr>
+                </table>
+                
+                <h3 style="margin-top: 20px;">3. Minh họa kết quả</h3>
+                <p>Ví dụ minh họa khi sử dụng tổ hợp toán tử tìm kiếm nâng cao:</p>
+                <div style="margin-top: 20px; text-align: center;">
+                    <img src="images/search-demo.png" alt="Minh họa tìm kiếm" style="max-width: 80%; border: 1px solid #444; border-radius: 5px;">
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="project-item">        
-        <h2 style="color: var(--accent-color);">Bài 3: Viết Prompt hiệu quả cho các tác vụ học tập</h2>
-        
-        <div class="project-content">
-            <h3>1. Mục tiêu bài tập</h3>
-            <p>Thực hành kỹ năng Prompt Engineering (Kỹ nghệ Gợi ý) để tương tác với các mô hình ngôn ngữ lớn (LLMs). Mục tiêu là biến AI thành một công cụ hỗ trợ giải quyết các vấn đề học tập phức tạp, rèn luyện tư duy lập trình và nâng cao ngoại ngữ.</p>
+        <section class="project-item" id="bai3">        
+            <h2 style="color: var(--accent-color);">Bài 3: Viết Prompt hiệu quả cho các tác vụ học tập</h2>
             
-            <h3>2. Quá trình thực hiện & So sánh Prompt</h3>
-            <p>Để minh họa, tôi đã chọn một bài toán tối ưu hóa cốt lõi trong lập trình là Quy hoạch động (Dynamic Programming). Dưới đây là sự tiến hóa từ một câu lệnh cơ bản thành một Prompt chuyên sâu:</p>
-            
-            <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 20px;">
-                <div style="flex: 1; min-width: 300px; background-color: #2d2d2d; padding: 15px; border-left: 4px solid #e06c75; border-radius: 5px;">
-                    <h4 style="margin-top: 0; color: #e06c75;">❌ Prompt ban đầu (Sơ sài)</h4>
-                    <p style="font-style: italic;">"Giải thích cách tối ưu bộ nhớ trong quy hoạch động."</p>
-                    <div style="font-size: 0.9em;">
-                        <strong>Nhược điểm:</strong> Quá chung chung. AI sẽ trả về một mớ lý thuyết dài dòng bằng tiếng Việt, thiếu các đoạn mã minh họa thực tế, gây khó khăn cho việc áp dụng vào code.
+            <div class="project-content">
+                <h3>1. Mục tiêu bài tập</h3>
+                <p>Thực hành kỹ năng Prompt Engineering (Kỹ nghệ Gợi ý) để tương tác với các mô hình ngôn ngữ lớn (LLMs). Mục tiêu là biến AI thành một công cụ hỗ trợ giải quyết các vấn đề học tập phức tạp, rèn luyện tư duy lập trình và nâng cao ngoại ngữ.</p>
+                
+                <h3>2. Quá trình thực hiện & So sánh Prompt</h3>
+                <p>Để minh họa, tôi đã chọn một bài toán tối ưu hóa cốt lõi trong lập trình là Quy hoạch động (Dynamic Programming). Dưới đây là sự tiến hóa từ một câu lệnh cơ bản thành một Prompt chuyên sâu:</p>
+                
+                <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 20px;">
+                    <div style="flex: 1; min-width: 300px; background-color: #2d2d2d; padding: 15px; border-left: 4px solid #e06c75; border-radius: 5px;">
+                        <h4 style="margin-top: 0; color: #e06c75;">❌ Prompt ban đầu (Sơ sài)</h4>
+                        <p style="font-style: italic;">"Giải thích cách tối ưu bộ nhớ trong quy hoạch động."</p>
+                        <div style="font-size: 0.9em;">
+                            <strong>Nhược điểm:</strong> Quá chung chung. AI sẽ trả về một mớ lý thuyết dài dòng bằng tiếng Việt, thiếu các đoạn mã minh họa thực tế, gây khó khăn cho việc áp dụng vào code.
+                        </div>
+                    </div>
+
+                    <div style="flex: 1; min-width: 300px; background-color: #2d2d2d; padding: 15px; border-left: 4px solid #98c379; border-radius: 5px;">
+                        <h4 style="margin-top: 0; color: #98c379;">✅ Prompt cải tiến (Đa mục tiêu & Chuyên sâu)</h4>
+                        <p style="font-style: italic;">"Act as an expert in competitive programming. I want to understand space optimization in dynamic programming, specifically how to convert 2D DP arrays into 1D arrays to optimize memory usage in Python. Use the 'maximize common subsequences' problem as an example. Explain this strictly in English so I can practice thinking directly in the language rather than translating from Vietnamese."</p>
+                        <div style="font-size: 0.9em;">
+                            <strong>Ưu điểm:</strong>
+                            <ul style="margin-bottom: 0; padding-left: 20px; margin-top: 5px;">
+                                <li><strong>Gán vai trò:</strong> Yêu cầu AI đóng vai chuyên gia (Role-playing).</li>
+                                <li><strong>Chi tiết hóa kỹ thuật:</strong> Chỉ định rõ công nghệ (Python) và kỹ thuật cụ thể (hạ mảng 2D xuống 1D).</li>
+                                <li><strong>Mục tiêu ngoại ngữ:</strong> Ép AI giải thích hoàn toàn bằng tiếng Anh để rèn luyện tư duy ngôn ngữ trực tiếp (không qua dịch thuật).</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <div style="flex: 1; min-width: 300px; background-color: #2d2d2d; padding: 15px; border-left: 4px solid #98c379; border-radius: 5px;">
-                    <h4 style="margin-top: 0; color: #98c379;">✅ Prompt cải tiến (Đa mục tiêu & Chuyên sâu)</h4>
-                    <p style="font-style: italic;">"Act as an expert in competitive programming. I want to understand space optimization in dynamic programming, specifically how to convert 2D DP arrays into 1D arrays to optimize memory usage in Python. Use the 'maximize common subsequences' problem as an example. Explain this strictly in English so I can practice thinking directly in the language rather than translating from Vietnamese."</p>
-                    <div style="font-size: 0.9em;">
-                        <strong>Ưu điểm:</strong>
-                        <ul style="margin-bottom: 0; padding-left: 20px; margin-top: 5px;">
-                            <li><strong>Gán vai trò:</strong> Yêu cầu AI đóng vai chuyên gia (Role-playing).</li>
-                            <li><strong>Chi tiết hóa kỹ thuật:</strong> Chỉ định rõ công nghệ (Python) và kỹ thuật cụ thể (hạ mảng 2D xuống 1D).</li>
-                            <li><strong>Mục tiêu ngoại ngữ:</strong> Ép AI giải thích hoàn toàn bằng tiếng Anh để rèn luyện tư duy ngôn ngữ trực tiếp (không qua dịch thuật).</li>
+                <h3>3. Minh họa kết quả đầu ra</h3>
+                <p>Kết quả nhận được từ Prompt cải tiến vô cùng ấn tượng. AI đã cung cấp chính xác đoạn mã Python tối ưu không gian O(N), đi kèm với phần giải thích luồng tư duy mạch lạc hoàn toàn bằng tiếng Anh như yêu cầu.</p>
+                
+                <div style="text-align: center; margin-top: 20px;">
+                    <img src="images/prompt-result.png" alt="Kết quả đầu ra từ AI" style="max-width: 85%; border: 1px solid #444; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
+                </div>
+            </div>
+        </section>
+
+        <section class="project-item" id="bai4">        
+            <h2 style="color: var(--accent-color);">Bài 4: Giao tiếp và hợp tác trong môi trường số</h2>
+            
+            <div class="project-content">
+                <h3>1. Mục tiêu bài tập</h3>
+                <p>Thực hành vận dụng các nền tảng số chuyên nghiệp để tổ chức công việc, quản lý mã nguồn và duy trì liên lạc hiệu quả khi làm việc nhóm từ xa, đảm bảo tiến độ và chất lượng dự án chung.</p>
+                
+                <h3>2. Quá trình thực hiện và Phối hợp</h3>
+                <p>Trong quá trình phát triển hệ thống <strong>Online-Auction</strong> (Backend Java, cơ sở dữ liệu MySQL), nhóm chúng tôi đã thiết lập một quy trình làm việc Agile/Scrum trên môi trường số như sau:</p>
+                
+                <ul style="color: var(--text-secondary); line-height: 1.8;">
+                    <li><strong>Quản lý tiến độ (Kanban Board):</strong> Sử dụng tính năng GitHub Projects để tạo bảng Kanban. Các đầu việc (tạo database MySQL, viết API đăng nhập, xử lý logic đấu giá) được chia nhỏ thành các <em>Issues</em> và di chuyển qua các cột: Todo ➔ In Progress ➔ In Review ➔ Done.</li>
+                    <li><strong>Giao tiếp đồng bộ & không đồng bộ:</strong> 
+                        <ul>
+                            <li>Tạo server Discord / nhóm Zalo riêng để trao đổi nhanh và hỗ trợ fix bug chéo.</li>
+                            <li>Tổ chức họp Google Meet định kỳ hàng tuần (Weekly Sprint) để báo cáo tiến độ và gỡ rối các rào cản kỹ thuật.</li>
                         </ul>
-                    </div>
-                </div>
-            </div>
+                    </li>
+                    <li><strong>Phối hợp kỹ thuật:</strong> Quản lý mã nguồn tập trung qua Git. Mọi thành viên phải tạo nhánh (branch) riêng khi code, sau đó mở Pull Request (PR) để các thành viên khác review (đánh giá chéo) trước khi merge vào nhánh chính (main) nhằm tránh xung đột code.</li>
+                </ul>
 
-            <h3>3. Minh họa kết quả đầu ra</h3>
-            <p>Kết quả nhận được từ Prompt cải tiến vô cùng ấn tượng. AI đã cung cấp chính xác đoạn mã Python tối ưu không gian O(N), đi kèm với phần giải thích luồng tư duy mạch lạc hoàn toàn bằng tiếng Anh như yêu cầu.</p>
-            
-            <div style="text-align: center; margin-top: 20px;">
-                <img src="images/prompt-result.png" alt="Kết quả đầu ra từ AI" style="max-width: 85%; border: 1px solid #444; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
-            </div>
-        </div>
-    </section>
-
-    <section class="project-item">        
-        <h2 style="color: var(--accent-color);">Bài 4: Giao tiếp và hợp tác trong môi trường số</h2>
-        
-        <div class="project-content">
-            <h3>1. Mục tiêu bài tập</h3>
-            <p>Thực hành vận dụng các nền tảng số chuyên nghiệp để tổ chức công việc, quản lý mã nguồn và duy trì liên lạc hiệu quả khi làm việc nhóm từ xa, đảm bảo tiến độ và chất lượng dự án chung.</p>
-            
-            <h3>2. Quá trình thực hiện và Phối hợp</h3>
-            <p>Trong quá trình phát triển hệ thống <strong>Online-Auction</strong> (Backend Java, cơ sở dữ liệu MySQL), nhóm chúng tôi đã thiết lập một quy trình làm việc Agile/Scrum trên môi trường số như sau:</p>
-            
-            <ul style="color: var(--text-secondary); line-height: 1.8;">
-                <li><strong>Quản lý tiến độ (Kanban Board):</strong> Sử dụng tính năng GitHub Projects để tạo bảng Kanban. Các đầu việc (tạo database MySQL, viết API đăng nhập, xử lý logic đấu giá) được chia nhỏ thành các <em>Issues</em> và di chuyển qua các cột: Todo ➔ In Progress ➔ In Review ➔ Done.</li>
-                <li><strong>Giao tiếp đồng bộ & không đồng bộ:</strong> 
-                    <ul>
-                        <li>Tạo server Discord / nhóm Zalo riêng để trao đổi nhanh và hỗ trợ fix bug chéo.</li>
-                        <li>Tổ chức họp Google Meet định kỳ hàng tuần (Weekly Sprint) để báo cáo tiến độ và gỡ rối các rào cản kỹ thuật.</li>
-                    </ul>
-                </li>
-                <li><strong>Phối hợp kỹ thuật:</strong> Quản lý mã nguồn tập trung qua Git. Mọi thành viên phải tạo nhánh (branch) riêng khi code, sau đó mở Pull Request (PR) để các thành viên khác review (đánh giá chéo) trước khi merge vào nhánh chính (main) nhằm tránh xung đột code.</li>
-            </ul>
-
-            <h3>3. Minh chứng thực hiện</h3>
-            <p>Dưới đây là các hình ảnh minh chứng về không gian làm việc và quản lý tiến độ của nhóm:</p>
-            
-            <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
-                <figure style="margin: 0; flex: 1; min-width: 300px;">
-                    <img src="images/team-management.png" alt="Quản lý dự án trên GitHub/Trello" style="width: 100%; border: 1px solid #444; border-radius: 5px;">
-                    <figcaption style="text-align: center; font-size: 0.9em; color: #888; margin-top: 8px;">Bảng phân chia công việc của nhóm</figcaption>
-                </figure>
+                <h3>3. Minh chứng thực hiện</h3>
+                <p>Dưới đây là các hình ảnh minh chứng về không gian làm việc và quản lý tiến độ của nhóm:</p>
                 
-                <figure style="margin: 0; flex: 1; min-width: 300px;">
-                    <img src="images/team-communication.png" alt="Thảo luận nhóm" style="width: 100%; border: 1px solid #444; border-radius: 5px;">
-                    <figcaption style="text-align: center; font-size: 0.9em; color: #888; margin-top: 8px;">Trao đổi tiến độ và gỡ lỗi trên không gian mạng</figcaption>
-                </figure>
-            </div>
-        </div>
-    </section>
-    
-    <section class="project-item">        
-        <h2 style="color: var(--accent-color);">Bài 5: Sử dụng AI tạo sinh để hỗ trợ sáng tạo nội dung</h2>
-        
-        <div class="project-content">
-            <h3>1. Mục tiêu bài tập</h3>
-            <p>Ứng dụng trí tuệ nhân tạo tạo sinh (Generative AI) để hỗ trợ quá trình sản xuất nội dung số. Cụ thể là kết hợp AI xử lý ngôn ngữ và AI tạo ảnh để xuất bản một bài viết blog kỹ thuật chuyên sâu.</p>
-            
-            <h3>2. Quá trình thực hiện</h3>
-            <p>Với mong muốn chia sẻ kiến thức về lập trình thi đấu, tôi đã sử dụng AI để hỗ trợ hoàn thiện bài viết mang tên <strong>"Tối ưu hóa không gian: Từ mảng 2D xuống 1D trong Quy hoạch động"</strong>:</p>
-            
-            <ul style="color: var(--text-secondary); line-height: 1.8;">
-                <li><strong>Biên tập và trau chuốt văn bản:</strong> Sau khi tôi tự lên dàn ý và viết phần mã nguồn Python cốt lõi, tôi cung cấp bản nháp cho AI để kiểm tra lỗi diễn đạt, sắp xếp lại cấu trúc câu sao cho mạch lạc và mang văn phong của một bài viết công nghệ chuyên nghiệp.</li>
-                <li><strong>Sáng tạo hình ảnh minh họa (Thumbnail):</strong> Để bài viết thêm phần sinh động, tôi sử dụng công cụ AI tạo ảnh (như Bing Image Creator / Midjourney) với câu lệnh (Prompt): <em>"A futuristic abstract representation of data memory compression, glowing blue and cyan color palette, digital tech art"</em> để làm ảnh bìa cho bài viết.</li>
-            </ul>
-
-            <h3>3. Sản phẩm hoàn thiện</h3>
-            <p>Dưới đây là giao diện bài viết blog sau khi được hỗ trợ thiết kế hình ảnh và biên tập nội dung bởi AI:</p>
-            
-            <!-- Giao diện giả lập bài Blog -->
-            <div style="background-color: #1a1a1a; padding: 25px; border-radius: 10px; border: 1px solid #444; margin-top: 20px;">
-                <div style="text-align: center;">
-                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80" alt="Ảnh bìa Blog mô phỏng" style="width: 100%; height: 220px; object-fit: cover; border-radius: 8px; margin-bottom: 20px; border: 1px solid #333;">
+                <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
+                    <figure style="margin: 0; flex: 1; min-width: 300px;">
+                        <img src="images/team-management.png" alt="Quản lý dự án trên GitHub/Trello" style="width: 100%; border: 1px solid #444; border-radius: 5px;">
+                        <figcaption style="text-align: center; font-size: 0.9em; color: #888; margin-top: 8px;">Bảng phân chia công việc của nhóm</figcaption>
+                    </figure>
+                    
+                    <figure style="margin: 0; flex: 1; min-width: 300px;">
+                        <img src="images/team-communication.png" alt="Thảo luận nhóm" style="width: 100%; border: 1px solid #444; border-radius: 5px;">
+                        <figcaption style="text-align: center; font-size: 0.9em; color: #888; margin-top: 8px;">Trao đổi tiến độ và gỡ lỗi trên không gian mạng</figcaption>
+                    </figure>
                 </div>
-                <h3 style="margin: 0 0 10px 0; color: #fff; font-size: 1.4em;">Tối ưu hóa không gian: Hạ bậc mảng DP từ 2D xuống 1D</h3>
-                <p style="color: #888; font-size: 0.9em; font-style: italic; margin-bottom: 20px; border-bottom: 1px dashed #444; padding-bottom: 10px;">
-                    Đăng bởi: Nguyễn Duy Tú Anh | Chuyên mục: Thuật toán & Tối ưu hiệu suất
-                </p>
-                <p style="color: var(--text-primary); text-align: left; line-height: 1.7;">
-                    Trong lập trình thi đấu, vượt qua giới hạn bộ nhớ (Memory Limit Exceeded) là một thách thức phổ biến. Thay vì trực tiếp giảm thiểu các thao tác xóa, chúng ta có thể chuyển đổi bài toán về dạng tìm chuỗi con chung dài nhất. Bài viết này sẽ hướng dẫn chi tiết cách áp dụng kỹ thuật "Space Optimization" để giảm thiểu độ phức tạp không gian...
-                </p>
-            <a href="troll.html" target="_blank" style="display: inline-block; text-decoration: none; margin-top: 15px; background-color: var(--accent-color); color: #000; border: none; padding: 10px 20px; font-weight: bold; border-radius: 5px; cursor: pointer;">Đọc tiếp bài viết >></a>            </div>
-        </div>
-    </section>
-
-    <section class="project-item">        
-        <h2 style="color: var(--accent-color);">Bài 6: An toàn và liêm chính học thuật trong môi trường số</h2>
-        
-        <div class="project-content">
-            <h3>1. Mục tiêu bài tập</h3>
-            <p>Nghiên cứu và xây dựng bộ nguyên tắc cá nhân về việc sử dụng Trí tuệ nhân tạo (AI) một cách có trách nhiệm trong học tập và nghiên cứu khoa học. Mục tiêu tối thượng là khai thác sức mạnh của AI làm đòn bẩy nâng cao hiệu suất nhưng vẫn bảo vệ tuyệt đối tính liêm chính học thuật.</p>
-            
-            <h3>2. Quá trình thực hiện</h3>
-            <p>Dựa trên các nghiên cứu về quy định học thuật tại trường Đại học Công nghệ (UET) và xu hướng công nghệ toàn cầu, tôi đã tự rà soát và phân tích ranh giới giữa việc "sử dụng AI hỗ trợ tư duy" và "lạm dụng AI làm hộ bài". Từ đó, tôi đúc kết ra một bộ quy tắc nghiêm ngặt áp dụng trực tiếp cho quá trình học tập và lập trình của bản thân.</p>
-
-            <h3>3. Bộ nguyên tắc cá nhân về sử dụng AI có trách nhiệm</h3>
-            <p>Là một kỹ sư phần mềm tương lai, tôi cam kết tuân thủ 3 nguyên tắc cốt lõi sau khi tương tác với các mô hình ngôn ngữ lớn (LLMs):</p>
-            
-            <div style="background-color: #1a1a1a; padding: 25px; border-radius: 10px; border: 1px solid #444; margin-top: 20px;">
-                <ol style="color: var(--text-primary); line-height: 1.8; padding-left: 20px; margin: 0;">
-                    <li style="margin-bottom: 15px;">
-                        <strong style="color: #98c379;">AI là Trợ lý giảng dạy, không phải Kỹ sư viết code hộ:</strong> 
-                        <span style="color: var(--text-secondary);">Chỉ sử dụng AI để giải thích thuật toán phức tạp (ví dụ: luồng tư duy quy hoạch động), tìm lỗi sai (debug) hoặc gợi ý hướng tiếp cận tối ưu. Tuyệt đối không sao chép nguyên xi mã nguồn do AI tự sinh để nộp bài khi chưa hiểu rõ bản chất logic đằng sau.</span>
-                    </li>
-                    <li style="margin-bottom: 15px;">
-                        <strong style="color: #61afef;">Luôn thẩm định và kiểm thử (Strict Verification):</strong> 
-                        <span style="color: var(--text-secondary);">AI hoàn toàn có thể "ảo tưởng" (hallucination) ra các câu lệnh SQL sai cấu trúc hoặc đoạn mã Python không tối ưu bộ nhớ. Mọi giải pháp từ AI đều phải được tôi đối chiếu lại với tài liệu chính thống (Official Documentation) và chạy thử nghiệm thực tế trên môi trường máy cục bộ (local).</span>
-                    </li>
-                    <li style="margin-bottom: 0;">
-                        <strong style="color: #e06c75;">Minh bạch và Trách nhiệm:</strong> 
-                        <span style="color: var(--text-secondary);">Chủ động khai báo sự hỗ trợ của các công cụ AI tạo sinh khi được giảng viên yêu cầu trong các báo cáo bài tập lớn hoặc dự án nhóm. Cam kết không gian lận, không đạo văn và chịu trách nhiệm 100% với sản phẩm cuối cùng do mình ký tên nộp bài.</span>
-                    </li>
-                </ol>
             </div>
-        </div>
-    </section>
+        </section>
+        
+        <section class="project-item" id="bai5">        
+            <h2 style="color: var(--accent-color);">Bài 5: Sử dụng AI tạo sinh để hỗ trợ sáng tạo nội dung</h2>
+            
+            <div class="project-content">
+                <h3>1. Mục tiêu bài tập</h3>
+                <p>Ứng dụng trí tuệ nhân tạo tạo sinh (Generative AI) để hỗ trợ quá trình sản xuất nội dung số. Cụ thể là kết hợp AI xử lý ngôn ngữ và AI tạo ảnh để xuất bản một bài viết blog kỹ thuật chuyên sâu.</p>
+                
+                <h3>2. Quá trình thực hiện</h3>
+                <p>Với mong muốn chia sẻ kiến thức về lập trình thi đấu, tôi đã sử dụng AI để hỗ trợ hoàn thiện bài viết mang tên <strong>"Tối ưu hóa không gian: Từ mảng 2D xuống 1D trong Quy hoạch động"</strong>:</p>
+                
+                <ul style="color: var(--text-secondary); line-height: 1.8;">
+                    <li><strong>Biên tập và trau chuốt văn bản:</strong> Sau khi tôi tự lên dàn ý và viết phần mã nguồn Python cốt lõi, tôi cung cấp bản nháp cho AI để kiểm tra lỗi diễn đạt, sắp xếp lại cấu trúc câu sao cho mạch lạc và mang văn phong của một bài viết công nghệ chuyên nghiệp.</li>
+                    <li><strong>Sáng tạo hình ảnh minh họa (Thumbnail):</strong> Để bài viết thêm phần sinh động, tôi sử dụng công cụ AI tạo ảnh (như Bing Image Creator / Midjourney) với câu lệnh (Prompt): <em>"A futuristic abstract representation of data memory compression, glowing blue and cyan color palette, digital tech art"</em> để làm ảnh bìa cho bài viết.</li>
+                </ul>
+
+                <h3>3. Sản phẩm hoàn thiện</h3>
+                <p>Dưới đây là giao diện bài viết blog sau khi được hỗ trợ thiết kế hình ảnh và biên tập nội dung bởi AI:</p>
+                
+                <!-- Giao diện giả lập bài Blog -->
+                <div style="background-color: #1a1a1a; padding: 25px; border-radius: 10px; border: 1px solid #444; margin-top: 20px;">
+                    <div style="text-align: center;">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80" alt="Ảnh bìa Blog mô phỏng" style="width: 100%; height: 220px; object-fit: cover; border-radius: 8px; margin-bottom: 20px; border: 1px solid #333;">
+                    </div>
+                    <h3 style="margin: 0 0 10px 0; color: #fff; font-size: 1.4em;">Tối ưu hóa không gian: Hạ bậc mảng DP từ 2D xuống 1D</h3>
+                    <p style="color: #888; font-size: 0.9em; font-style: italic; margin-bottom: 20px; border-bottom: 1px dashed #444; padding-bottom: 10px;">
+                        Đăng bởi: Nguyễn Duy Tú Anh | Chuyên mục: Thuật toán & Tối ưu hiệu suất
+                    </p>
+                    <p style="color: var(--text-primary); text-align: left; line-height: 1.7;">
+                        Trong lập trình thi đấu, vượt qua giới hạn bộ nhớ (Memory Limit Exceeded) là một thách thức phổ biến. Thay vì trực tiếp giảm thiểu các thao tác xóa, chúng ta có thể chuyển đổi bài toán về dạng tìm chuỗi con chung dài nhất. Bài viết này sẽ hướng dẫn chi tiết cách áp dụng kỹ thuật "Space Optimization" để giảm thiểu độ phức tạp không gian...
+                    </p>
+                <a href="troll.html" target="_blank" style="display: inline-block; text-decoration: none; margin-top: 15px; background-color: var(--accent-color); color: #000; border: none; padding: 10px 20px; font-weight: bold; border-radius: 5px; cursor: pointer;">Đọc tiếp bài viết >></a>            </div>
+            </div>
+        </section>
+
+        <section class="project-item" id="bai6">        
+            <h2 style="color: var(--accent-color);">Bài 6: An toàn và liêm chính học thuật trong môi trường số</h2>
+            
+            <div class="project-content">
+                <h3>1. Mục tiêu bài tập</h3>
+                <p>Nghiên cứu và xây dựng bộ nguyên tắc cá nhân về việc sử dụng Trí tuệ nhân tạo (AI) một cách có trách nhiệm trong học tập và nghiên cứu khoa học. Mục tiêu tối thượng là khai thác sức mạnh của AI làm đòn bẩy nâng cao hiệu suất nhưng vẫn bảo vệ tuyệt đối tính liêm chính học thuật.</p>
+                
+                <h3>2. Quá trình thực hiện</h3>
+                <p>Dựa trên các nghiên cứu về quy định học thuật tại trường Đại học Công nghệ (UET) và xu hướng công nghệ toàn cầu, tôi đã tự rà soát và phân tích ranh giới giữa việc "sử dụng AI hỗ trợ tư duy" và "lạm dụng AI làm hộ bài". Từ đó, tôi đúc kết ra một bộ quy tắc nghiêm ngặt áp dụng trực tiếp cho quá trình học tập và lập trình của bản thân.</p>
+
+                <h3>3. Bộ nguyên tắc cá nhân về sử dụng AI có trách nhiệm</h3>
+                <p>Là một kỹ sư phần mềm tương lai, tôi cam kết tuân thủ 3 nguyên tắc cốt lõi sau khi tương tác với các mô hình ngôn ngữ lớn (LLMs):</p>
+                
+                <div style="background-color: #1a1a1a; padding: 25px; border-radius: 10px; border: 1px solid #444; margin-top: 20px;">
+                    <ol style="color: var(--text-primary); line-height: 1.8; padding-left: 20px; margin: 0;">
+                        <li style="margin-bottom: 15px;">
+                            <strong style="color: #98c379;">AI là Trợ lý giảng dạy, không phải Kỹ sư viết code hộ:</strong> 
+                            <span style="color: var(--text-secondary);">Chỉ sử dụng AI để giải thích thuật toán phức tạp (ví dụ: luồng tư duy quy hoạch động), tìm lỗi sai (debug) hoặc gợi ý hướng tiếp cận tối ưu. Tuyệt đối không sao chép nguyên xi mã nguồn do AI tự sinh để nộp bài khi chưa hiểu rõ bản chất logic đằng sau.</span>
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <strong style="color: #61afef;">Luôn thẩm định và kiểm thử (Strict Verification):</strong> 
+                            <span style="color: var(--text-secondary);">AI hoàn toàn có thể "ảo tưởng" (hallucination) ra các câu lệnh SQL sai cấu trúc hoặc đoạn mã Python không tối ưu bộ nhớ. Mọi giải pháp từ AI đều phải được tôi đối chiếu lại với tài liệu chính thống (Official Documentation) và chạy thử nghiệm thực tế trên môi trường máy cục bộ (local).</span>
+                        </li>
+                        <li style="margin-bottom: 0;">
+                            <strong style="color: #e06c75;">Minh bạch và Trách nhiệm:</strong> 
+                            <span style="color: var(--text-secondary);">Chủ động khai báo sự hỗ trợ của các công cụ AI tạo sinh khi được giảng viên yêu cầu trong các báo cáo bài tập lớn hoặc dự án nhóm. Cam kết không gian lận, không đạo văn và chịu trách nhiệm 100% với sản phẩm cuối cùng do mình ký tên nộp bài.</span>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+    </main>
 
 </body>
 </html>
