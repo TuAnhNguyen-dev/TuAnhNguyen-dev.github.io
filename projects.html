@@ -82,6 +82,7 @@
                     </figure>
                 </div>
             </div>
+            <button class="btn btn-view-pdf btn-primary" data-pdf="pdfs/bai1.pdf">📄 Xem Báo Cáo Bài 1</button>
         </section>
 
         <section class="project-item" id="bai2">
@@ -152,6 +153,7 @@
                     <img src="images/search-demo.png" alt="Minh họa tìm kiếm" style="max-width: 80%; border: 1px solid #444; border-radius: 5px;">
                 </div>
             </div>
+            <button class="btn btn-view-pdf btn-primary" data-pdf="pdfs/bai2.pdf">📄 Xem Báo Cáo Bài 2</button>
         </section>
 
         <section class="project-item" id="bai3">        
@@ -194,6 +196,7 @@
                     <img src="images/prompt-result.png" alt="Kết quả đầu ra từ AI" style="max-width: 85%; border: 1px solid #444; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
                 </div>
             </div>
+            <button class="btn btn-view-pdf btn-primary" data-pdf="pdfs/3.pdf">📄 Xem Báo Cáo Bài 3</button>
         </section>
 
         <section class="project-item" id="bai4">        
@@ -232,6 +235,7 @@
                     </figure>
                 </div>
             </div>
+            <button class="btn btn-view-pdf btn-primary" data-pdf="pdfs/bai4.pdf">📄 Xem Báo Cáo Bài 4</button>
         </section>
         
         <section class="project-item" id="bai5">        
@@ -264,7 +268,7 @@
                     <p style="color: var(--text-primary); text-align: left; line-height: 1.7;">
                         Trong lập trình thi đấu, vượt qua giới hạn bộ nhớ (Memory Limit Exceeded) là một thách thức phổ biến. Thay vì trực tiếp giảm thiểu các thao tác xóa, chúng ta có thể chuyển đổi bài toán về dạng tìm chuỗi con chung dài nhất. Bài viết này sẽ hướng dẫn chi tiết cách áp dụng kỹ thuật "Space Optimization" để giảm thiểu độ phức tạp không gian...
                     </p>
-                    <a href="troll.html" target="_blank" class="btn btn-primary">Đọc tiếp bài viết >></a>            
+                    <a href="blog.html" class="btn btn-primary">Đọc tiếp bài viết >></a>            
                 </div>
             </div>
         </section>
@@ -299,8 +303,52 @@
                     </ol>
                 </div>
             </div>
+            <button class="btn btn-view-pdf btn-primary" data-pdf="pdfs/bai6.pdf">📄 Xem Báo Cáo Bài 6</button>
         </section>
     </main>
+
+    <div id="pdfModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title">📄 Trình xem tài liệu</span>
+                <span class="close-btn">&times;</span>
+            </div>
+            <div class="modal-body">
+                <iframe id="pdfFrame" src="" width="100%" height="100%" style="border: none;"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Lấy các thành phần HTML
+        const modal = document.getElementById('pdfModal');
+        const pdfFrame = document.getElementById('pdfFrame');
+        const closeBtn = document.querySelector('.close-btn');
+        const viewButtons = document.querySelectorAll('.btn-view-pdf');
+
+        // Bắt sự kiện khi bấm vào bất kỳ nút "Xem PDF" nào
+        viewButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const pdfPath = button.getAttribute('data-pdf'); // Lấy link từ data-pdf
+                pdfFrame.src = pdfPath; // Gắn link vào iframe
+                modal.style.display = 'flex'; // Hiển thị Modal
+            });
+        });
+
+        // Đóng Modal khi bấm nút X
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+            pdfFrame.src = ''; // Xóa link để làm nhẹ trình duyệt
+        });
+
+        // Đóng Modal khi click chuột ra ngoài vùng khung đen
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                pdfFrame.src = '';
+            }
+        });
+    </script>
 
 </body>
 </html>

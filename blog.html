@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Blog | TuAnhNguyen</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <script>
+    MathJax = {
+        tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$$']]
+        }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+    <!-- Thanh điều hướng -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="https://www.facebook.com/tu.ang.nguyen.50971/" target="_blank" style="text-decoration: none; color: inherit;">
+                TuAnhNguyen()
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Giới thiệu</a></li>
+            <li><a href="projects.html">Dự án</a></li>
+            <li><a href="summary.html">Tổng kết</a></li>
+        </ul>
+    </nav>
+
+    <main class="container blog-container">
+        
+        <div class="tags-sidebar">
+            <a href="#dat-van-de" class="tag-btn">1. Đặt Vấn Đề</a>
+            <a href="#phan-tich" class="tag-btn">2. Phân Tích Cốt Lõi</a>
+            <a href="#trien-khai" class="tag-btn">3. Triển Khai (Python)</a>
+            <a href="#tong-ket" class="tag-btn">4. Tổng Kết</a>
+        </div>
+
+        <article class="blog-post">
+            <header class="blog-header">
+                <img src="images/blog-cover.jpg" alt="Ảnh bìa bài viết quy hoạch động" class="blog-cover">
+                <h1 class="blog-title">Tối Ưu Hóa Không Gian Bộ Nhớ: Kỹ Thuật Hạ Cấp Mảng 2D Xuống 1D Trong Quy Hoạch Động</h1>
+                <div class="blog-meta">
+                    <span class="date">📅 13 Tháng 06, 2026</span>
+                    <span class="tags">🏷️ Algorithms, Python, Optimization</span>
+                </div>
+            </header>
+
+            <section class="blog-content">
+                <h3 id="dat-van-de">Đặt vấn đề</h3>
+                <p>Trong quá trình xây dựng các hệ thống Backend hoặc tham gia lập trình thi đấu, một trong những rào cản lớn nhất khi đối mặt với các bài toán Quy hoạch động (Dynamic Programming - DP) không phải là giới hạn thời gian (Time Limit Exceeded), mà chính là giới hạn bộ nhớ (Memory Limit Exceeded). Khi tập dữ liệu đầu vào N quá lớn, việc khởi tạo một mảng DP 2 chiều với kích thước O(N²) có thể ngay lập tức đánh sập hệ thống.</p>
+                
+                <h3 id="phan-tich">Bản chất của bài toán tối ưu</h3>
+                <p>Kỹ thuật <strong>Space Optimization</strong> ra đời dựa trên một quan sát cốt lõi: Trong hầu hết các bài toán chuyển trạng thái (state transition) như Bài toán Cái túi (Knapsack) hay Tìm chuỗi con chung dài nhất (LCS), trạng thái của hàng thứ i thực chất <em>chỉ phụ thuộc vào dữ liệu của hàng thứ i-1</em>.</p>
+                <p>Điều này đồng nghĩa với việc, việc lưu trữ toàn bộ lịch sử các hàng từ 1 đến i-2 là sự lãng phí tài nguyên máy chủ vô ích. Chúng ta hoàn toàn có thể "ép" hệ thống chỉ sử dụng một hoặc hai mảng 1 chiều có độ lớn O(N) để liên tục ghi đè dữ liệu.</p>
+
+                <h3 id="trien-khai">Triển khai thực tế: Cài đặt bằng Python</h3>
+                <p>Thay vì khởi tạo <code>dp = [[0] * W for _ in range(N)]</code>, chúng ta chỉ cần một mảng 1 chiều duy nhất và duyệt ngược. Dưới đây là đoạn mã nguồn Python triển khai kỹ thuật này, tối ưu không gian bộ nhớ từ O(N * W) xuống còn đúng O(W):</p>
+
+<pre><code class="language-python">def optimized_knapsack(weights, values, capacity):
+    n = len(weights)
+    # Khởi tạo mảng 1 chiều thay vì 2 chiều
+    dp = [0] * (capacity + 1)
+    
+    for i in range(n):
+        # Duyệt ngược để tránh ghi đè dữ liệu chưa sử dụng của hàng i-1
+        for w in range(capacity, weights[i] - 1, -1):
+            dp[w] = max(dp[w], dp[w - weights[i]] + values[i])
+            
+    return dp[capacity]
+
+# Kết quả: Tiết kiệm tới 90% RAM khi capacity lên tới hàng triệu
+</code></pre>
+
+                <h3 id="tong-ket">Tổng kết</h3>
+                <p>Kỹ năng quản trị bộ nhớ phân biệt một lập trình viên biết viết code và một Kỹ sư phần mềm thiết kế hệ thống. Việc nắm vững kỹ thuật hạ cấp mảng DP chứng minh tư duy quản lý tài nguyên (resource management) chặt chẽ, đảm bảo các ứng dụng luôn hoạt động ổn định dưới tải trọng dữ liệu lớn.</p>
+            </section>
+
+            <footer class="blog-footer">
+                <hr>
+                <div class="action-box">
+                    <h4>Minh chứng Bài tập 5: Sáng tạo nội dung số</h4>
+                    <p>Bài viết này được thực hiện với sự hỗ trợ của các công cụ AI (Gemini, Midjourney, Canva) trong khâu lên ý tưởng và thiết kế hình ảnh. Vui lòng xem báo cáo chi tiết để đánh giá mức độ đóng góp cá nhân và phân tích đạo đức AI.</p>
+                    <a href="pdfs/bai5-report.pdf" target="_blank" class="btn btn-view-pdf btn-primary">📄 Xem Báo Cáo Ứng Dụng AI (PDF)</a>
+                </div>
+            </footer>
+        </article>
+    </main>
+</body>
+</html>
