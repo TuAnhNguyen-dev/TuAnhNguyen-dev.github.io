@@ -1,22 +1,97 @@
-/* --- CẤU HÌNH MÀU SẮC --- */
+/* ==========================================================================
+   1. VARIABLES (Biến toàn cục)
+   ========================================================================== */
 :root {
-    --bg-color: #121212;      /* Màu nền tối giống IDE */
-    --surface-color: #1e1e1e; /* Màu nền cho thanh điều hướng/khối thông tin */
-    --text-primary: #e0e0e0;  /* Màu chữ chính (trắng xám cho đỡ mỏi mắt) */
-    --text-secondary: #a0a0a0;/* Màu chữ phụ */
-    --accent-color: #61afef;  /* Màu nhấn xanh dương (chuẩn style code) */
+    /* Colors */
+    --bg-color: #121212;
+    --surface-color: #1e1e1e;
+    --card-bg: #1e1e1e;       /* Phục hồi biến màu cho Blog */
+    --text-primary: #e0e0e0;
+    --text-color: #e0e0e0;    /* Phục hồi biến màu chữ cho Blog */
+    --text-secondary: #a0a0a0;
+    --accent-color: #61afef;
+    
+    /* Z-index */
+    --z-navbar: 1000;
+    --z-modal: 2000;
+    --z-sidebar: 100;
 }
 
-/* --- THIẾT LẬP CHUNG --- */
+/* ==========================================================================
+   2. BASE & RESET (Thiết lập gốc)
+   ========================================================================== */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--bg-color);
     color: var(--text-primary);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font gọn gàng */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
 }
 
+h1, h2, h3 {
+    color: var(--text-primary);
+}
+
+/* ==========================================================================
+   3. LAYOUTS (Cấu trúc khung trang)
+   ========================================================================== */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* ==========================================================================
+   4. COMPONENTS (Thành phần tái sử dụng)
+   ========================================================================== */
+
+/* --- 4.1 Buttons (Nút bấm) --- */
+.btn, .btn-view-pdf {
+    display: inline-block;
+    padding: 12px 28px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    box-shadow: 0 4px 10px rgba(97, 175, 239, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(97, 175, 239, 0.5);
+    background-color: #7bc0ff;
+}
+
+/* Phục hồi nút GitHub */
+.btn-outline {
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    background-color: transparent;
+}
+
+.btn-outline:hover {
+    transform: translateY(-3px);
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    box-shadow: 0 8px 20px rgba(97, 175, 239, 0.4);
+}
+
+/* --- 4.2 Navbar & Logo --- */
 .navbar {
     background-color: var(--surface-color);
     padding: 15px 40px;
@@ -24,17 +99,30 @@ body {
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid #333;
-    
     position: sticky; 
-    top: 0;           /* Ghim sát vào mép trên cùng của trình duyệt */
-    z-index: 1000;    /* Đảm bảo thanh menu luôn nổi lên trên cùng, không bị ảnh hay chữ đè lên khi cuộn */
+    top: 0;           
+    z-index: var(--z-navbar);    
 }
 
+/* Phục hồi hiệu ứng Logo */
 .logo {
     font-size: 24px;
     font-weight: bold;
-    font-family: 'Courier New', Courier, monospace; /* Font gõ phím */
+    font-family: 'Courier New', Courier, monospace; 
     color: var(--accent-color);
+}
+
+.logo a {
+    color: var(--accent-color);
+    text-decoration: none;
+    display: inline-block; 
+    transition: all 0.3s ease; 
+}
+
+.logo a:hover {
+    color: #ffffff; 
+    text-shadow: 0 0 15px var(--accent-color), 0 0 30px var(--accent-color); 
+    transform: scale(1.08) rotate(-2deg); 
 }
 
 .nav-links {
@@ -49,7 +137,7 @@ body {
     color: var(--text-primary);
     text-decoration: none;
     font-weight: 500;
-    position: relative; /* Đặt làm mốc để đường gạch chân neo vào */
+    position: relative; 
     transition: color 0.3s ease;
 }
 
@@ -60,356 +148,29 @@ body {
 .nav-links a::after {
     content: '';
     position: absolute;
-    width: 0;           /* Ban đầu đường kẻ dài 0px (bị giấu đi) */
-    height: 2px;        /* Độ dày của đường kẻ */
-    bottom: -6px;       /* Cách chân chữ 6px cho thoáng */
-    left: 0;            /* Bắt đầu trượt từ mép trái */
+    width: 0;           
+    height: 2px;        
+    bottom: -6px;       
+    left: 0;            
     background-color: var(--accent-color);
-    transition: width 0.3s ease; /* Tốc độ trượt mượt mà 0.3 giây */
+    transition: width 0.3s ease; 
 }
 
-/* Khi di chuột vào HOẶC khi đang ở đúng trang đó (class active) */
 .nav-links a:hover::after, .nav-links a.active::after {
-    width: 100%;        /* Đường kẻ trượt dài ra bằng đúng 100% chữ */
+    width: 100%;        
 }
 
-/* --- NỘI DUNG CHÍNH --- */
-.container {
-    width: 90%;          /* Thêm tỷ lệ % để khung tự động bóp mềm mại trên các màn hình nhỏ */
-    max-width: 1000px;   /* Giữ nguyên giới hạn 1000px để giao diện PC không bị biến dạng */
-    margin: 40px auto;   /* Giữ nguyên căn giữa */
-    padding: 20px;       /* Giữ nguyên khoảng đệm */
-}
-
-h1, h2 {
-    color: var(--text-primary);
-}
-
-.project-item {
-    background-color: var(--surface-color);
-    padding: 40px 50px;
-    border-radius: 12px;
-    margin-bottom: 50px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-    
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
-}
-
-/* Đảm bảo ảnh bên trong không bao giờ bị tràn ra ngoài lề */
-.project-item img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Hiệu ứng nhấc bổng khi hover */
-.project-item:hover {
-    transform: translateY(-8px); /* Nhấc nhẹ khối lên trên 8px dọc theo trục Y */
-    box-shadow: 0 12px 30px rgba(97, 175, 239, 0.15); /* Đổ bóng rộng hơn, pha nhẹ ánh sáng xanh */
-}
-
-/* --- KHU VỰC HERO (GIỚI THIỆU CHÍNH) --- */
-.hero-section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-}
-
-.hero-text {
-    flex: 1; /* Cho phần chữ chiếm không gian linh hoạt */
-}
-
-.hero-image {
-    flex-basis: 280px; /* Kích thước cố định cho khu vực ảnh */
-    text-align: center;
-}
-
-.hero-image img {
-    width: 100%;
-    max-width: 250px;
-    aspect-ratio: 1 / 1; /* Ép ảnh thành hình vuông chuẩn */
-    object-fit: cover; /* Cắt ảnh không bị méo */
-    border-radius: 50%; /* Bo tròn hoàn toàn */
-    border: 4px solid var(--accent-color); /* Viền màu xanh nhấn */
-    box-shadow: 0 0 25px rgba(97, 175, 239, 0.3); /* Hiệu ứng phát sáng công nghệ */
-    transition: transform 0.3s ease; /* Hiệu ứng chuyển động mượt */
-}
-
-/* Tương tác khi di chuột vào ảnh */
-.hero-image img:hover {
-    transform: scale(1.05); /* Phóng to nhẹ lên 5% */
-}
-
-/* Responsive: Đẩy ảnh lên trên chữ khi xem trên điện thoại */
-@media (max-width: 768px) {
-    .hero-section {
-        flex-direction: column-reverse;
-        text-align: center;
-    }
-}
-
-/* --- HIỆU ỨNG TRƯỢT MƯỢT --- */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Bù trừ khoảng không để Navbar không đè lên tiêu đề bài tập khi bấm Tag */
-.project-item {
-    scroll-margin-top: 90px; 
-}
-
-/* --- THANH TAG ĐIỀU HƯỚNG GÓC TRÁI --- */
-.tags-sidebar {
-    position: fixed;
-    top: 150px;          
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    z-index: 100;
-    
-    /* ĐOẠN CODE TOÁN HỌC THẦN THÁNH Ở ĐÂY */
-    /* 1. Mốc là giữa màn hình (50%) */
-    /* 2. Lùi lại 450px (một nửa chiều rộng container) để ra mép trái container */
-    /* 3. Lùi thêm 30px nữa để tạo khoảng cách thở (gap) */
-    left: calc(50% - 480px);
-    
-    /* Kéo giật thanh Tag sang trái bằng đúng 100% chiều rộng của nó, 
-       đảm bảo mép phải của nó vừa chạm mốc bên trên */
-    transform: translateX(-100%);
-}
-.tag-btn {
-    background-color: var(--surface-color);
-    color: var(--text-secondary);
-    padding: 10px 18px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 0.9em;
-    font-weight: bold;
-    border-left: 4px solid transparent;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-.tag-btn:hover {
-    color: var(--accent-color);
-    border-left-color: var(--accent-color); /* Hiện vạch xanh bên trái khi chỉ chuột */
-    transform: translateX(8px); /* Thụt nhẹ sang phải tạo cảm giác bấm */
-}
-
-/* Ẩn thanh Tag trên màn hình nhỏ (điện thoại/tablet) để tránh đè vào nội dung chữ */
-@media (max-width: 1300px) {
-    .tags-sidebar {
-        display: none;
-    }
-}
-
-/* --- HIỆU ỨNG TƯƠNG TÁC CHO LOGO --- */
-.logo a {
-    display: inline-block; /* Bắt buộc phải có dòng này thì hiệu ứng to/nhỏ mới hoạt động */
-    transition: all 0.3s ease; /* Tạo độ mượt khi chuyển đổi trạng thái */
-}
-
-.logo a:hover {
-    color: #ffffff !important; /* Chữ lóe sáng thành màu trắng tinh */
-    text-shadow: 0 0 15px var(--accent-color), 0 0 30px var(--accent-color); /* Đổ bóng phát sáng tỏa ra xung quanh */
-    transform: scale(1.08) rotate(-2deg); /* Phóng to nhẹ lên 8% và nghiêng trái 2 độ tạo cảm giác phá cách */
-}
-
-/* --- NÚT BẤM (BUTTONS) TRANG CHỦ --- */
-.btn {
-    display: inline-block;
-    padding: 12px 28px;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
-    transition: all 0.3s ease; /* Chuyển động mượt mà */
-
-    border: none;             /* Xóa sổ viền mặc định của trình duyệt */
-    font-family: inherit;     /* Ép button dùng chung font chữ xịn của trang web */
-    font-size: 1rem;          /* Ép cỡ chữ to bằng với thẻ a (1rem = 16px) */
-    cursor: pointer;          /* Đảm bảo chuột biến thành bàn tay */
-}
-
-/* Nút chính (Xem Dự Án) */
-.btn-primary {
-    background-color: var(--accent-color);
-    color: #121212; 
-    margin-right: 15px;
-    box-shadow: 0 4px 10px rgba(97, 175, 239, 0.2); /* Đổ bóng xanh nhạt */
-}
-
-.btn-primary:hover {
-    transform: translateY(-3px); /* Nhấc nhẹ nút lên */
-    box-shadow: 0 8px 20px rgba(97, 175, 239, 0.5); /* Sáng rực lên */
-    background-color: #7bc0ff; /* Đổi màu xanh sáng hơn một chút */
-}
-
-/* Nút phụ (GitHub) */
-.btn-outline {
-    border: 2px solid var(--accent-color);
-    color: var(--accent-color);
-    background-color: transparent;
-}
-
-.btn-outline:hover {
-    transform: translateY(-3px); /* Nhấc nhẹ nút lên */
-    background-color: var(--accent-color); /* Nền đặc lại thành màu xanh */
-    color: #121212; /* Chữ chuyển thành màu đen */
-    box-shadow: 0 8px 20px rgba(97, 175, 239, 0.4); /* Phát sáng */
-}
-
-/* =========================================
-   THIẾT KẾ CHO TRANG TECH BLOG (BÀI 5)
-========================================= */
-
-/* Căn chỉnh không gian đọc chuẩn UI/UX */
-.blog-container {
-    max-width: 800px; /* Bóp chiều rộng lại để mắt không phải lia quá xa */
-    margin: 40px auto;
-    background-color: var(--card-bg);
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
-}
-
-/* Ảnh bìa bài viết */
-.blog-cover {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    display: block;
-}
-
-/* Tiêu đề và Meta Data */
-.blog-header {
-    padding: 30px 40px 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.blog-title {
-    color: var(--accent-color);
-    font-size: 2.2rem;
-    line-height: 1.4;
-    margin-bottom: 15px;
-}
-
-.blog-meta {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    font-family: monospace;
-}
-
-.blog-meta span {
-    margin-right: 15px;
-}
-
-/* Nội dung bài viết */
-.blog-content {
-    padding: 20px 40px;
-    color: var(--text-color);
-    line-height: 1.8;
-    font-size: 1.1rem;
-}
-
-.blog-content h3 {
-    color: var(--accent-color);
-    margin-top: 30px;
-    margin-bottom: 15px;
-    font-size: 1.5rem;
-}
-
-/* Khối Code Block xịn xò */
-.blog-content pre {
-    background-color: #1e1e1e;
-    padding: 20px;
-    border-radius: 8px;
-    overflow-x: auto;
-    border-left: 4px solid var(--accent-color);
-    margin: 20px 0;
-}
-
-.blog-content code {
-    font-family: 'Consolas', 'Courier New', monospace;
-    color: #d4d4d4;
-    font-size: 0.95rem;
-}
-
-/* Các thẻ code nội tuyến (inline code) */
-.blog-content p code {
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 2px 6px;
-    border-radius: 4px;
-    color: #ff9d00;
-}
-
-/* Khu vực Nút bấm PDF ở cuối bài */
-.blog-footer {
-    padding: 20px 40px 40px;
-}
-
-.blog-footer hr {
-    border: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    margin-bottom: 20px;
-}
-
-.action-box {
-    background-color: rgba(0, 255, 204, 0.05); /* Nền xanh highlight nhẹ */
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.action-box h4 {
-    color: var(--accent-color);
-    margin-bottom: 10px;
-}
-
-.action-box p {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    margin-bottom: 20px;
-}
-
-/* Nút bấm (Tái sử dụng style hoặc định dạng mới) */
-.btn-primary {
-    display: inline-block;
-    background-color: var(--accent-color);
-    color: var(--bg-color);
-    padding: 12px 24px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-    background-color: #00ccff; /* Đổi màu sáng hơn khi Hover */
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 255, 204, 0.4);
-}
-
-.btn-view-pdf {
-    margin-top: 20px;    /* Đẩy nút cách xa dòng chữ phía trên ra 20px */
-    margin-bottom: 20px; /* Đẩy cách phần tử bên dưới ra một chút */
-    padding: 12px 24px;  /* Tăng không gian bên trong, giúp chữ không bị sát lề nút */
-    cursor: pointer;     /* Đảm bảo chuột biến thành hình bàn tay khi di vào */
-
-    font-family: inherit; /* Ép nút dùng chung font chữ xịn xò của trang web */
-    font-weight: bold;    /* In đậm chữ lên cho bằng bạn bằng bè */
-    border: none;         /* Xóa sổ cái viền đen viền xám mặc định xấu xí */
-}
-
+/* --- 4.3 Modal & Popup --- */
 .modal {
-    display: none; /* Mặc định ẩn đi */
+    display: none; 
     position: fixed;
-    z-index: 1000; /* Nổi lên trên cùng */
+    z-index: var(--z-modal); 
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Nền đen mờ 80% */
-    backdrop-filter: blur(5px); /* Hiệu ứng làm mờ nền như kính */
+    background-color: rgba(0, 0, 0, 0.8); 
+    backdrop-filter: blur(5px); 
     justify-content: center;
     align-items: center;
 }
@@ -418,7 +179,7 @@ html {
     background-color: #1e1e1e;
     width: 90%;
     max-width: 1000px;
-    height: 85vh; /* Cao bằng 85% màn hình */
+    height: 85vh; 
     border-radius: 12px;
     display: flex;
     flex-direction: column;
@@ -456,10 +217,216 @@ html {
 }
 
 .close-btn:hover {
-    color: #ff4757; /* Đổi màu đỏ khi di chuột vào dấu X */
+    color: #ff4757; 
 }
 
 .modal-body {
-    flex-grow: 1; /* Chiếm toàn bộ không gian còn lại */
+    flex-grow: 1; 
     background-color: #333;
+}
+
+/* --- 4.4 Tags Sidebar --- */
+.tags-sidebar {
+    position: fixed;
+    top: 150px;          
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: var(--z-sidebar);
+    left: calc(50% - 480px);
+    transform: translateX(-100%);
+}
+
+.tag-btn {
+    background-color: var(--surface-color);
+    color: var(--text-secondary);
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: bold;
+    border-left: 4px solid transparent;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.tag-btn:hover {
+    color: var(--accent-color);
+    border-left-color: var(--accent-color); 
+    transform: translateX(8px); 
+}
+
+@media (max-width: 1300px) {
+    .tags-sidebar {
+        display: none;
+    }
+}
+
+/* ==========================================================================
+   5. PAGES (Định dạng riêng cho từng trang)
+   ========================================================================== */
+
+/* --- 5.1 Trang Chủ (Hero Section & Projects) --- */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1; 
+}
+
+.hero-image {
+    flex-basis: 280px; 
+    text-align: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 250px;
+    aspect-ratio: 1 / 1; 
+    object-fit: cover; 
+    border-radius: 50%; 
+    border: 4px solid var(--accent-color); 
+    box-shadow: 0 0 25px rgba(97, 175, 239, 0.3); 
+    transition: transform 0.3s ease; 
+}
+
+.hero-image img:hover {
+    transform: scale(1.05); 
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+}
+
+/* Phục hồi giao diện khối Dự án */
+.project-item {
+    background-color: var(--surface-color);
+    padding: 40px 50px;
+    border-radius: 12px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    scroll-margin-top: 90px; 
+}
+
+.project-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.project-item:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 12px 30px rgba(97, 175, 239, 0.15); 
+}
+
+/* --- 5.2 Trang Tech Blog --- */
+.blog-container {
+    max-width: 800px; 
+    margin: 40px auto;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.blog-cover {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+.blog-header {
+    padding: 30px 40px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.blog-title {
+    color: var(--accent-color);
+    font-size: 2.2rem;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.blog-meta {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-family: monospace;
+}
+
+.blog-meta span {
+    margin-right: 15px;
+}
+
+.blog-content {
+    padding: 20px 40px;
+    color: var(--text-color);
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.blog-content h3 {
+    color: var(--accent-color);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    scroll-margin-top: 90px; /* Phục hồi lỗi bị menu che khuất */
+}
+
+.blog-content pre {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    border-left: 4px solid var(--accent-color);
+    margin: 20px 0;
+}
+
+.blog-content code {
+    font-family: 'Consolas', 'Courier New', monospace;
+    color: #d4d4d4;
+    font-size: 0.95rem;
+}
+
+.blog-content p code {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #ff9d00;
+}
+
+.blog-footer {
+    padding: 20px 40px 40px;
+}
+
+.blog-footer hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Phục hồi hộp Action Box ở cuối Blog */
+.action-box {
+    background-color: rgba(0, 255, 204, 0.05); 
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.action-box h4 {
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+.action-box p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
 }
