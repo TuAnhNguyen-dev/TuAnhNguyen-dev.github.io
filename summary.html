@@ -8,10 +8,9 @@
 </head>
 <body>
 
-    <!-- Thanh điều hướng dùng chung cho cả 3 trang -->
     <nav class="navbar">
         <div class="logo">
-            <a href="https://www.facebook.com/tu.ang.nguyen.50971/" target="_blank" style="text-decoration: none; color: inherit;">
+            <a href="https://www.facebook.com/tuanh.nguyen.12345/" target="_blank" style="text-decoration: none; color: inherit;">
                 TuAnhNguyen()
             </a>
         </div>
@@ -22,45 +21,47 @@
         </ul>
     </nav>
 
-    <!-- Phần nội dung chính -->
-    <main class="container">
+    <main class="container" style="max-width: 800px;">
         
-        <section class="project-item">
-            <h1 style="color: var(--accent-color); margin-top: 0; border-bottom: 2px solid #333; padding-bottom: 10px;">Ghi chú Phát triển & Tổng kết Dự án</h1>
-            
-            <div style="margin-top: 30px;">
-                <h2 style="color: #e0e0e0; font-size: 1.4em;">💡 1. Cảm nhận chung</h2>
-                <p style="color: var(--text-secondary); line-height: 1.8;">
-                    Khởi đầu, tôi chỉ xem đây là một bài tập tổng kết môn học. Tuy nhiên, khi quyết định không sử dụng các nền tảng kéo-thả (như Google Sites hay Wix) mà tự tay thiết kế mã nguồn HTML/CSS và triển khai (deploy) trực tiếp lên <strong>GitHub Pages</strong>, dự án này đã thực sự trở thành một sản phẩm công nghệ cá nhân mang đậm dấu ấn của một lập trình viên Backend. Trải nghiệm biến những tệp tài liệu rời rạc thành một không gian web đồng bộ, mượt mà thực sự rất thỏa mãn.
-                </p>
-            </div>
+        <div class="tags-sidebar">
+            <a href="#cam-nhan" class="tag-btn">1. Cảm Nhận</a>
+            <a href="#kien-thuc" class="tag-btn">2. Kiến Thức</a>
+            <a href="#thach-thuc" class="tag-btn">3. Thách Thức</a>
+            <a href="#liem-chinh" class="tag-btn">4. Liêm Chính</a>
+        </div>
 
-            <div style="margin-top: 30px;">
-                <h2 style="color: #e0e0e0; font-size: 1.4em;">🛠️ 2. Kiến thức & Kỹ năng đọng lại</h2>
-                <ul style="color: var(--text-secondary); line-height: 1.8;">
-                    <li><strong>Kỹ năng triển khai web tĩnh:</strong> Nắm vững luồng làm việc với Git, khởi tạo kho lưu trữ (repository) và ứng dụng CI/CD cơ bản của GitHub Pages để đưa website hòa mạng Internet.</li>
-                    <li><strong>Quản lý giao diện & Layout:</strong> Hiểu được cách tổ chức thư mục mã nguồn (tách biệt file <code>style.css</code>), ứng dụng CSS Variables để làm giao diện Dark Theme, và cách tối ưu khoảng trắng (white-space) để nâng cao trải nghiệm UI/UX.</li>
-                    <li><strong>Kỹ nghệ Gợi ý (Prompt Engineering):</strong> Nâng cao kỹ năng giao tiếp với AI, biết cách đóng khung bối cảnh để AI trở thành một biên tập viên và kỹ sư hỗ trợ đắc lực.</li>
-                </ul>
-            </div>
-
-            <div style="margin-top: 30px;">
-                <h2 style="color: #e0e0e0; font-size: 1.4em;">🔥 3. Điểm tâm đắc & Thách thức</h2>
-                <ul style="color: var(--text-secondary); line-height: 1.8;">
-                    <li><strong>Điểm tâm đắc nhất:</strong> Tôi đã xây dựng thành công một giao diện mang phong cách IDE (môi trường lập trình) tối màu, chuyên nghiệp. Đồng thời, tôi rất thích thú khi lồng ghép được một "Easter Egg" (trang <code>troll.html</code>) nhỏ vào Bài 5 để tạo điểm nhấn kỹ thuật và sự hài hước.</li>
-                    <li><strong>Thách thức đã vượt qua:</strong> Khó khăn lớn nhất là việc xử lý các hình ảnh chụp màn hình thô (raw) và ép chúng hiển thị chuẩn tỷ lệ, không bị vỡ hay tràn viền trên web. Vấn đề này đã được giải quyết triệt để nhờ áp dụng thuộc tính <code>object-fit: cover</code> trong CSS.</li>
-                </ul>
-            </div>
-
-            <!-- Khai báo liêm chính học thuật -->
-            <div style="margin-top: 50px; background-color: #121212; padding: 20px; border-left: 4px solid var(--accent-color); border-radius: 5px;">
-                <h3 style="margin-top: 0; color: var(--accent-color); font-size: 1.1em;">⚖️ Tuyên bố Liêm chính Học thuật</h3>
-                <p style="color: #888; font-size: 0.9em; margin-bottom: 0; line-height: 1.6;">
-                    Dự án Portfolio này được khởi tạo, lên ý tưởng và cung cấp dữ liệu nguyên bản bởi cá nhân tôi (Nguyễn Duy Tú Anh). Trong quá trình phát triển mã nguồn frontend (HTML/CSS) và biên tập văn phong trình bày, tôi đã sử dụng Mô hình Ngôn ngữ Lớn (LLM) dưới vai trò là một trợ lý ảo (Co-pilot). Mọi cấu trúc mã nguồn đều được tôi kiểm duyệt, tinh chỉnh và đẩy lên kho lưu trữ GitHub cá nhân một cách minh bạch.
-                </p>
-            </div>
-
+        <section id="cam-nhan" class="project-item" style="padding: 40px 50px;">
+            <h1 style="color: var(--accent-color); margin-top: 0; border-bottom: 2px solid #333; padding-bottom: 15px; margin-bottom: 25px;">Ghi chú Phát triển & Tổng kết Dự án</h1>
+            <h2 style="color: #e0e0e0; font-size: 1.4em; margin-top: 0;">💡 1. Cảm nhận chung</h2>
+            <p style="color: var(--text-secondary); line-height: 1.8;">
+                Khởi đầu, tôi chỉ xem đây là một bài tập tổng kết môn học. Tuy nhiên, khi quyết định không sử dụng các nền tảng kéo-thả (như Google Sites hay Wix) mà tự tay thiết kế mã nguồn HTML/CSS và triển khai (deploy) trực tiếp lên <strong>GitHub Pages</strong>, dự án này đã thực sự trở thành một sản phẩm công nghệ cá nhân mang đậm dấu ấn của một lập trình viên Backend. Trải nghiệm biến những tệp tài liệu rời rạc thành một không gian web đồng bộ, mượt mà thực sự rất thỏa mãn.
+            </p>
         </section>
+
+        <section id="kien-thuc" class="project-item" style="padding: 35px 50px;">
+            <h2 style="color: #e0e0e0; font-size: 1.4em; margin-top: 0;">🛠️ 2. Kiến thức & Kỹ năng đọng lại</h2>
+            <ul style="color: var(--text-secondary); line-height: 1.8;">
+                <li><strong>Kỹ năng triển khai web tĩnh:</strong> Nắm vững luồng làm việc với Git, khởi tạo kho lưu trữ (repository) và ứng dụng CI/CD cơ bản của GitHub Pages để đưa website hòa mạng Internet.</li>
+                <li><strong>Quản lý giao diện & Layout:</strong> Hiểu được cách tổ chức thư mục mã nguồn (tách biệt file <code>style.css</code>), ứng dụng CSS Variables để làm giao diện Dark Theme, và cách tối ưu khoảng trắng (white-space) để nâng cao trải nghiệm UI/UX.</li>
+                <li><strong>Kỹ nghệ Gợi ý (Prompt Engineering):</strong> Nâng cao kỹ năng giao tiếp với AI, biết cách đóng khung bối cảnh để AI trở thành một biên tập viên và kỹ sư hỗ trợ đắc lực.</li>
+            </ul>
+        </section>
+
+        <section id="thach-thuc" class="project-item" style="padding: 35px 50px;">
+            <h2 style="color: #e0e0e0; font-size: 1.4em; margin-top: 0;">🔥 3. Điểm tâm đắc & Thách thức</h2>
+            <ul style="color: var(--text-secondary); line-height: 1.8;">
+                <li><strong>Điểm tâm đắc nhất:</strong> Tôi đã xây dựng thành công một giao diện mang phong cách IDE (môi trường lập trình) tối màu, chuyên nghiệp. Đồng thời, tôi rất thích thú khi lồng ghép được một "Easter Egg" (trang <code>blog.html</code>) nhỏ vào Bài 5 để tạo điểm nhấn kỹ thuật và sự hài hước.</li>
+                <li><strong>Thách thức đã vượt qua:</strong> Khó khăn lớn nhất là việc xử lý các hình ảnh chụp màn hình thô (raw) và ép chúng hiển thị chuẩn tỷ lệ, không bị vỡ hay tràn viền trên web. Vấn đề này đã được giải quyết triệt để nhờ áp dụng thuộc tính <code>object-fit: cover</code> trong CSS.</li>
+            </ul>
+        </section>
+
+        <section id="liem-chinh" class="project-item" style="padding: 35px 50px; border-left: 4px solid var(--accent-color);">
+            <h2 style="margin-top: 0; color: var(--accent-color); font-size: 1.4em;">⚖️ Tuyên bố Liêm chính Học thuật</h2>
+            <p style="color: #a0a0a0; font-size: 1em; margin-bottom: 0; line-height: 1.8;">
+                Dự án Portfolio này được khởi tạo, lên ý tưởng và cung cấp dữ liệu nguyên bản bởi cá nhân tôi (Nguyễn Duy Tú Anh). Trong quá trình phát triển mã nguồn frontend (HTML/CSS) và biên tập văn phong trình bày, tôi đã sử dụng Mô hình Ngôn ngữ Lớn (LLM) dưới vai trò là một trợ lý ảo (Co-pilot). Mọi cấu trúc mã nguồn đều được tôi kiểm duyệt, tinh chỉnh và đẩy lên kho lưu trữ GitHub cá nhân một cách minh bạch.
+            </p>
+        </section>
+
     </main>
 
 </body>

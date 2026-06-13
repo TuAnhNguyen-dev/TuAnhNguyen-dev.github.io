@@ -233,8 +233,7 @@ h1, h2, h3 {
     flex-direction: column;
     gap: 12px;
     z-index: var(--z-sidebar);
-    left: calc(50% - 480px);
-    transform: translateX(-100%);
+    left: max(20px, calc(50% - 660px));
 }
 
 .tag-btn {
@@ -248,6 +247,8 @@ h1, h2, h3 {
     border-left: 4px solid transparent;
     transition: all 0.3s ease;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    width: 200px;            /* Ép tất cả các nút ở mọi trang đều rộng đúng 240px */
+    box-sizing: border-box;
 }
 
 .tag-btn:hover {
